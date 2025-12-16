@@ -15,4 +15,4 @@ export interface ChatMessage {
   citations?: string[];
 }
 
-export type View = 'home' | 'chapter' | 'chat' | 'resources';
+export type View = 'home' | 'chapter' | 'chat' | 'resources' | 'privacy';

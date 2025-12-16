@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { HashRouter } from 'react-router-dom';
-import { Send, ArrowLeft, ExternalLink, Sparkles, Book, Download, Info } from 'lucide-react';
+import { Send, ArrowLeft, ExternalLink, Sparkles, Book, Download, Info, Shield } from 'lucide-react';
 import { CHAPTERS, GITA_PDF_URL } from './constants';
 import { Chapter, ChatMessage, View } from './types';
 import { sendGitaQuestion } from './services/geminiService';
@@ -98,6 +98,15 @@ const App: React.FC = () => {
           <ChapterCard key={chapter.id} chapter={chapter} onClick={handleChapterClick} />
         ))}
       </div>
+
+      <footer className="mt-12 text-center pb-8 opacity-60">
+        <button 
+          onClick={() => setCurrentView('privacy')} 
+          className="text-xs text-krishna-700 hover:underline flex items-center justify-center mx-auto"
+        >
+          <Shield className="w-3 h-3 mr-1" /> Privacy Policy
+        </button>
+      </footer>
     </div>
   );
 
@@ -307,6 +316,43 @@ const App: React.FC = () => {
     </div>
   );
 
+  const renderPrivacyPolicy = () => (
+    <div className="p-6 pb-24 max-w-3xl mx-auto bg-white min-h-screen">
+       <button 
+          onClick={() => setCurrentView('home')}
+          className="flex items-center text-krishna-700 font-medium mb-6 hover:underline"
+        >
+          <ArrowLeft className="w-4 h-4 mr-1" /> Back Home
+        </button>
+        
+        <h1 className="text-2xl font-bold text-krishna-900 mb-6">Privacy Policy</h1>
+        
+        <div className="prose prose-sm text-krishna-800">
+          <p><strong>Effective Date:</strong> {new Date().toLocaleDateString()}</p>
+          
+          <h3>1. Introduction</h3>
+          <p>Welcome to Gita Guide. This app is designed for students to explore the Bhagavad Gita. We are committed to protecting your privacy.</p>
+
+          <h3>2. Data Collection</h3>
+          <p>We do not collect, store, or share any personal identifiable information (PII) from children or any users. </p>
+
+          <h3>3. AI and Third-Party Services</h3>
+          <p>This app uses Google Gemini AI to answer questions about the Gita. When you ask a question:</p>
+          <ul>
+            <li>The text of your question is sent to Google's servers for processing.</li>
+            <li>No personal data is attached to this request.</li>
+            <li>We do not store your chat history on our servers.</li>
+          </ul>
+
+          <h3>4. Permissions</h3>
+          <p>This app does not request access to your camera, microphone, or location.</p>
+
+          <h3>5. Contact</h3>
+          <p>If you have questions about this policy, please contact us through the Google Play Store support link.</p>
+        </div>
+    </div>
+  );
+
   return (
     <HashRouter>
       <div className="min-h-screen bg-krishna-50 font-sans text-krishna-900 selection:bg-peacock-200 selection:text-peacock-900">
@@ -317,10 +363,13 @@ const App: React.FC = () => {
           {currentView === 'chapter' && renderChapterDetail()}
           {currentView === 'chat' && renderChat()}
           {currentView === 'resources' && renderResources()}
+          {currentView === 'privacy' && renderPrivacyPolicy()}
         </main>
 
-        {/* Navigation */}
-        <BottomNav currentView={currentView} setView={setCurrentView} />
+        {/* Navigation - Hide on privacy page */}
+        {currentView !== 'privacy' && (
+          <BottomNav currentView={currentView} setView={setCurrentView} />
+        )}
         
       </div>
     </HashRouter>

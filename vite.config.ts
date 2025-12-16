@@ -12,7 +12,10 @@ export default defineConfig({
         { src: 'sw.js', dest: '' },
         { src: 'manifest.json', dest: '' },
         { src: '*.png', dest: '' },
-        { src: '*.pdf', dest: '' }
+        { src: '*.svg', dest: '' },
+        { src: '*.pdf', dest: '' },
+        // This is required for Android App Links verification
+        { src: '.well-known', dest: '.well-known' } 
       ]
     })
   ],
