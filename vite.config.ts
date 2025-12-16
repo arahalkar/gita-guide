@@ -11,9 +11,8 @@ export default defineConfig({
       targets: [
         { src: 'sw.js', dest: '' },
         { src: 'manifest.json', dest: '' },
-        // Updated to include both PNG and SVG. If you have PNGs, this will pick them up.
-        // If you have SVGs, it will pick them up. As long as one exists, the build won't fail.
-        { src: '*.{png,svg}', dest: '' },
+        // Explicitly copy PNGs
+        { src: '*.png', dest: '' },
         { src: '*.pdf', dest: '' },
         // This copies the .well-known folder for Android verification.
         { src: '.well-known', dest: '.well-known' } 
