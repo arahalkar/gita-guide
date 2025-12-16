@@ -11,10 +11,9 @@ export default defineConfig({
       targets: [
         { src: 'sw.js', dest: '' },
         { src: 'manifest.json', dest: '' },
-        // Explicitly copy PNGs
-        { src: '*.png', dest: '' },
+        // CHANGE: Copy PNGs into an 'assets' folder to match the PWA tool's expectation
+        { src: '*.png', dest: 'assets' },
         { src: '*.pdf', dest: '' },
-        // This copies the .well-known folder for Android verification.
         { src: '.well-known', dest: '.well-known' } 
       ]
     })
