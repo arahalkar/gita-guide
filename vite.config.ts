@@ -11,10 +11,10 @@ export default defineConfig({
       targets: [
         { src: 'sw.js', dest: '' },
         { src: 'manifest.json', dest: '' },
-        { src: '*.png', dest: '' },
         { src: '*.svg', dest: '' },
         { src: '*.pdf', dest: '' },
-        // This is required for Android App Links verification
+        // This copies the .well-known folder for Android verification.
+        // We ensure a placeholder exists so the build doesn't fail if you haven't added the real key yet.
         { src: '.well-known', dest: '.well-known' } 
       ]
     })
