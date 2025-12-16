@@ -1,4 +1,6 @@
-const CACHE_NAME = 'gita-guide-v2';
+const CACHE_NAME = 'gita-guide-v4';
+// We only cache the critical text/code files during install. 
+// Images will be cached lazily when they are requested.
 const URLS_TO_CACHE = [
   './',
   './index.html',
