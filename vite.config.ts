@@ -4,28 +4,22 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Setting base to '/assets/' to match the subfolder structure the TWA expects
-  base: '/assets/',
   plugins: [
     react(),
-    // This plugin copies root assets to the build subfolder
+    // This plugin copies your root assets (pdf, icons, sw, manifest) to the build folder
     viteStaticCopy({
       targets: [
         { src: 'sw.js', dest: '' },
         { src: 'manifest.json', dest: '' },
-        { src: 'icon-192.png', dest: '' },
-        { src: 'icon-512.png', dest: '' },
+        // CHANGE: Copy PNGs into an 'assets' folder to match the PWA tool's expectation
+        { src: '*.png', dest: 'assets' },
         { src: '*.pdf', dest: '' },
-        // We target the file specifically and place it relative to the dist root
-        // Since base is /assets/, 'dist' is one level up from the assets folder
-        { 
-          src: '.well-known/assetlinks.json', 
-          dest: '../.well-known' 
-        } 
+        { src: '.well-known', dest: '.well-known' } 
       ]
     })
   ],
   define: {
+    // Passes the Vercel environment variable to the client-side code
     'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
   }
 });
