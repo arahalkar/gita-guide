@@ -1,5 +1,5 @@
-const CACHE_NAME = 'gita-guide-v8';
-// Paths are relative to the service worker location (now in /assets/)
+const CACHE_NAME = 'gita-guide-v9';
+// Paths are relative to the service worker location (which will be in /assets/)
 const URLS_TO_CACHE = [
   './',
   './index.html',
@@ -35,7 +35,6 @@ self.addEventListener('fetch', (event) => {
 
             caches.open(CACHE_NAME)
               .then((cache) => {
-                // Don't cache API calls or the large PDF
                 if (!event.request.url.includes('google/genai') && !event.request.url.includes('.pdf')) {
                    cache.put(event.request, responseToCache);
                 }

@@ -13,15 +13,19 @@ export default defineConfig({
       targets: [
         { src: 'sw.js', dest: '' },
         { src: 'manifest.json', dest: '' },
-        { src: '*.png', dest: '' },
+        { src: 'icon-192.png', dest: '' },
+        { src: 'icon-512.png', dest: '' },
         { src: '*.pdf', dest: '' },
-        // Assetlinks must remain at the domain root, not in the /assets/ subfolder
-        { src: '.well-known', dest: '../.well-known' } 
+        // We target the file specifically and place it relative to the dist root
+        // Since base is /assets/, 'dist' is one level up from the assets folder
+        { 
+          src: '.well-known/assetlinks.json', 
+          dest: '../.well-known' 
+        } 
       ]
     })
   ],
   define: {
-    // Passes the environment variable to the client-side code
     'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
   }
 });
