@@ -1,10 +1,10 @@
 [
-    {
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "com.gitaguide.app",
-        "sha256_cert_fingerprints": []
-      }
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.vercel.gita_guide_eight.twa",
+      "sha256_cert_fingerprints": []
     }
-  ]
+  }
+]
