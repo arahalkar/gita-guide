@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gita-guide-v10';
+const CACHE_NAME = 'gita-guide-v11';
 // Paths are relative to the service worker location (which will be in /assets/)
 const URLS_TO_CACHE = [
   './',
