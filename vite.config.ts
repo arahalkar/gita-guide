@@ -14,7 +14,6 @@ export default defineConfig({
         // CHANGE: Copy PNGs into an 'assets' folder to match the PWA tool's expectation
         { src: '*.png', dest: 'assets' },
         { src: '*.pdf', dest: '' },
-        { src: '*.html', dest: 'assets' },
         { src: '.well-known', dest: '.well-known' } 
       ]
     })
