@@ -1,9 +1,9 @@
-const CACHE_NAME = 'gita-guide-v11';
-// Paths are relative to the service worker location (which will be in /assets/)
+
+const CACHE_NAME = 'gita-guide-v12';
 const URLS_TO_CACHE = [
-  './',
-  './index.html',
-  './manifest.json',
+  '/',
+  '/index.html',
+  '/manifest.json',
   'https://cdn.tailwindcss.com',
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap'
 ];
@@ -35,6 +35,7 @@ self.addEventListener('fetch', (event) => {
 
             caches.open(CACHE_NAME)
               .then((cache) => {
+                // Don't cache API calls or large PDFs
                 if (!event.request.url.includes('google/genai') && !event.request.url.includes('.pdf')) {
                    cache.put(event.request, responseToCache);
                 }
