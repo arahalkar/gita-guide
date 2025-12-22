@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'gita-guide-v12';
+const CACHE_NAME = 'gita-guide-v15';
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
