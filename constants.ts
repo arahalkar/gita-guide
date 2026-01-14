@@ -1,8 +1,61 @@
+
 import { Chapter } from './types';
 
 // Refers to a local file in the project root/public folder. 
-// Please ensure 'gita-hindi.pdf' exists in your build directory.
 export const GITA_PDF_URL = "./gita-hindi.pdf"; 
+
+export const GITA_QUOTES = [
+  {
+    verse: "Karmanye vadhikaraste ma phaleshu kadachana",
+    translation: "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+    lesson: "Focus on your studies and exams, not just the grades!"
+  },
+  {
+    verse: "Yoga-sthah kuru karmani sangam tyaktva dhananjaya",
+    translation: "Be steadfast in Yoga, O Arjuna. Perform your duty and abandon all attachment to success or failure.",
+    lesson: "Stay balanced even when school gets stressful."
+  },
+  {
+    verse: "uddhared atmanatmanam natmanam avasadayet",
+    translation: "Elevate yourself through the power of your mind, and do not degrade yourself.",
+    lesson: "You are your own best friend. Believe in yourself!"
+  },
+  {
+    verse: "shreyan swa-dharmo vigunah para-dharmat sw-anushthitat",
+    translation: "It is far better to perform one’s own duty, even though imperfectly, than another’s duty perfectly.",
+    lesson: "Don't compare your journey to others. Follow your own path."
+  },
+  {
+    verse: "krodhad bhavati sammohah sammohat smriti-vibhramah",
+    translation: "From anger comes delusion; from delusion comes loss of memory.",
+    lesson: "Keep your cool during arguments or tough assignments to stay sharp."
+  },
+  {
+    verse: "Yatha dipo nivatastho nengate sopama smrita",
+    translation: "As a lamp in a windless place does not flicker, so the disciplined mind remains steady.",
+    lesson: "Practice focus. A steady mind is a superpower for learning."
+  },
+  {
+    verse: "Sattvanurupa sarvasya shraddha bhavati bharata",
+    translation: "The faith of all humans is according to their nature.",
+    lesson: "Respect everyone's unique way of learning and growing."
+  },
+  {
+    verse: "dharmenavrtta-prajnasya",
+    translation: "Knowledge is covered by desire, which is as insatiable as fire.",
+    lesson: "Don't let distractions get in the way of your goals."
+  },
+  {
+    verse: "ashantasy-akutah sukham",
+    translation: "For the unsteady there is no peace, and for the peaceless there is no happiness.",
+    lesson: "Take breaks to meditate or breathe. Peace leads to better results."
+  },
+  {
+    verse: "Tasmat sarveshu kaleshu mam anusmara yudhya cha",
+    translation: "Therefore, at all times, remember Me and fight.",
+    lesson: "Keep your values in mind even when life gets competitive."
+  }
+];
 
 export const CHAPTERS: Chapter[] = [
   {
