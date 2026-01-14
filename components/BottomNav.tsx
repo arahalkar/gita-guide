@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Home, MessageCircle, FileText } from 'lucide-react';
 import { View } from '../types';
@@ -10,7 +11,7 @@ interface BottomNavProps {
 const BottomNav: React.FC<BottomNavProps> = ({ currentView, setView }) => {
   const navItems = [
     { id: 'home', label: 'Chapters', icon: Home },
-    { id: 'chat', label: 'Ask Krishna', icon: MessageCircle },
+    { id: 'chat', label: 'Gita AI', icon: MessageCircle },
     { id: 'resources', label: 'Resources', icon: FileText },
   ];
 
